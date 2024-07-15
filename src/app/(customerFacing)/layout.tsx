@@ -1,6 +1,6 @@
-import AdminNavbar from '@/components/nav/AdminNavbar';
+import Navbar from '@/components/nav/Navbar';
 
-export default function AdminLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -8,7 +8,7 @@ export default function AdminLayout({
   return (
     <html lang="en">
       <body>
-        <AdminNavbar />
+        <Navbar />
         <main className="container my-6">{children}</main>
       </body>
     </html>
