@@ -3,17 +3,27 @@ export function formatCurrency(
   format = 'en-US',
   currency = 'USD'
 ) {
-  const CURRENCY_FORMATTER = new Intl.NumberFormat(format, {
+  const currencyFormatter = new Intl.NumberFormat(format, {
     currency,
     style: 'currency',
     minimumFractionDigits: 0,
   });
 
-  return CURRENCY_FORMATTER.format(amount);
+  return currencyFormatter.format(amount);
 }
 
 export function formatNumber(number: number, format = 'en-US') {
-  const NUMBER_FORMATTER = new Intl.NumberFormat(format);
+  const numberFormatter = new Intl.NumberFormat(format);
 
-  return NUMBER_FORMATTER.format(number);
+  return numberFormatter.format(number);
+}
+
+type DateStyle = 'full' | 'long' | 'medium' | 'short';
+
+export function formatDate(date: Date, locale = 'en', dateStyle?: DateStyle) {
+  const dateFormatter = new Intl.DateTimeFormat(locale, {
+    dateStyle: dateStyle ?? 'medium',
+  });
+
+  return dateFormatter.format(date);
 }
