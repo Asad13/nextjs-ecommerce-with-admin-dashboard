@@ -6,11 +6,9 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <main className="container my-6">{children}</main>
-      </body>
-    </html>
+    <>
+      <Navbar />
+      <main className="container my-6">{children}</main>
+    </>
   );
 }
